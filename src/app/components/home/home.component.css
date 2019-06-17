@@ -1,0 +1,41 @@
+.container-fluid {
+    padding: 0 !important;
+}
+
+.ventas {
+    background-color: #ff9900 !important;
+    width: 100% !important;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.alquileres {
+    background-color: #ffad33 !important;
+    width: 100% !important;
+    /* padding-top: 6rem; */
+}
+
+.card-footer {
+    display: flex !important;
+    /* right: 0; */
+    justify-content: flex-end !important;
+}
+
+.tag {
+    background-color: rgb(31, 26, 23);
+    float: left;
+    width: 200px;
+    height: auto;
+    font-family: 'Museo500-Regular', sans-serif;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom-right-radius: 10px;
+    display: block;
+    /* margin-top: -50px; */
+    color: white;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+

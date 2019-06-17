@@ -1,0 +1,93 @@
+<div class="col-12 card-body bg-secondary" *ngIf="article != null">
+  <div>
+      <button type="button" class="btn btn-primary" routerLink='/private'>Volver atras</button>
+  </div>
+  <div class="text-center mb-5">
+      <h1 class="h2 mb-2">Crear un nuevo articulo</h1>
+      <span>No hay campos obligatorios lo que se cargue es lo que se vera en la pagina</span>
+  </div>
+  <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+          <form (ngSubmit)="onUpdateArticle(article)" #formNew="ngForm">
+
+              <div class="form-row form-group">
+                  <div class="col">
+                      <input [(ngModel)]='article.name' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                          class="form-control form-control-lg" type="text" placeholder="Nombre" />
+                  </div>
+              </div>
+              <div class="form-row form-group">
+                  <div class="col">
+                      <input [(ngModel)]='article.description' [ngModelOptions]="{standalone: true}"
+                          #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                          placeholder="Descripcion" />
+                  </div>
+              </div>
+              <div class="form-row form-group">
+                  <div class="col">
+                      <input [(ngModel)]='article.code' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                          class="form-control form-control-lg" type="text" placeholder="Codigo" />
+                  </div>
+              </div>
+              
+              
+              <div class="form-row form-group">
+                  <div class="col">
+                      <input [(ngModel)]='article.price' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                          class="form-control form-control-lg" type="text" placeholder="Precio" />
+                  </div>
+              </div>
+              
+              <div class="form-row form-group">
+                  <div class="col">
+                      <input [(ngModel)]='article.state' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                          class="form-control form-control-lg" type="text" placeholder="Estado" />
+                  </div>
+              </div>
+
+              <div class="form-row form-group">
+                <div class="col">
+                    <input [(ngModel)]='article.kind' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                        class="form-control form-control-lg" type="text" placeholder="Tipo" />
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                  <div class="col-sm">
+                      <div class="form-row form-group">
+                          <div class="col">
+                              <p>Imagen 1</p>
+                              <input type="file" (change)="uploadFile($event)" accept=".png,.jpg"
+                                  *ngIf="!article.images[0] " />
+                              <div>{{ uploadPercent | async }}</div>
+
+                              <a href='{{ article.images[0] }}' target="_blank"
+                                  *ngIf="article.images[0] && article.images[0] != 'borrado' ">Imagen
+                                  1</a>
+                              <!-- <div class="progress">
+                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                  </div> -->
+                          </div>
+                          <button type="button" class="btn btn-danger"
+                              *ngIf="article.images[0] && article.images[0] != 'borrado'"
+                              (click)="deletePhoto(article.images[0],0)">Eliminar</button>
+                      </div>                   
+                      
+                  </div>
+              </div>
+
+              <div class="form-row form-group">
+                  <div class="col">
+                      <button class="btn btn-block btn-success btn-lg" type="submit">Editar articulo</button>
+                  </div>
+              </div>
+
+          </form>
+      </div>
+  </div>
+
+</div>
+
+<!-- <app-waiting *ngIf="article == null"></app-waiting> -->

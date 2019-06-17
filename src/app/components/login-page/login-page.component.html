@@ -1,0 +1,84 @@
+<div class="main-container">
+  <section class="space-sm">
+      <div class="container align-self-start">
+          <div class="row mb-5">
+              <div class="col text-center">
+                  <!-- <a href="#">
+                      <img alt="Image" src="assets/img/logo-gray.svg" />
+                  </a> -->
+              </div>
+              <!--end of col-->
+          </div>
+          <!--end of row-->
+          <div class="row justify-content-center">
+              <div class="col-12 col-md-8 col-lg-7">
+                  <div class="card card-lg text-center">
+                      <div class="card-body">
+                          <div class="mb-5">
+                              <!-- <h1 class="h2 mb-2">Hello again</h1> -->
+                              <span>Ingrese datos de acceso</span>
+                          </div>
+                          <div class="row no-gutters justify-content-center">
+                                
+                              <form class="text-left col-lg-8" name="userform" method="post" #formCtrl="ngForm" >
+                                  <div class="form-group">
+                                      <label for="login-email">Email </label>
+                                      <input class="form-control form-control-lg" type="email" name="email" id="login-email" placeholder="Email Address" [(ngModel)]="user.email" />
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="login-password">Password</label>
+                                      <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Enter a password" [(ngModel)]="user.password"/>
+                                      <!-- <small>Forgot password? <a href="#">Reset here</a>
+                                      </small> -->
+                                  </div>
+
+
+                                  <!-- <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
+                                  </div> -->
+
+
+                                  <div>
+                                      <!-- <div class="custom-control custom-checkbox align-items-center">
+                                          <input type="checkbox" class="custom-control-input" value="box-1" name="box-1" checked id="check-remember">
+                                          <label class="custom-control-label text-small" for="check-remember">Remember me next time</label>
+                                      </div> -->
+                                  </div>
+                                  <div class="text-center mt-3">
+                                      <!-- <button type="submit" class="btn btn-lg btn-primary">Log in user site</button> -->
+                                      <button type="buton" class="btn btn-lg btn-primary" style="margin-bottom: 20px" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">
+                                            Login in user site
+                                      </button>
+                                  </div>
+                                  
+                              </form>
+                              <!-- <div class="text-center mt-3">
+                                <button class="btn btn-lg btn-primary" (click)='onClickGoogleLogin()' >Log in google</button>
+                              </div> -->
+
+                              <div class="form-group">
+                                
+                             </div>
+
+                          </div>
+                          <!--end of row-->
+                      </div>
+                  </div>
+                  <div class="text-center">
+                      <!-- <span class="text-small">Don't have an account yet? <a href="#">Create one</a>
+                      </span> -->
+                  </div>
+              </div>
+              <!--end of col-->
+          </div>
+          <!--end of row-->
+      </div>
+      <!--end of container-->
+  </section>
+  <!--end of section-->
+</div>

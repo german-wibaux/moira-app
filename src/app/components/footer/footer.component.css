@@ -1,0 +1,21 @@
+.footer-short {
+    padding: 1rem !important;
+    background-color: #9C9A96 !important;   
+}
+
+.custom-footer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.row {
+    justify-content: center;
+}
+
+img {
+    height: 6rem !important;
+}
+
+
+
