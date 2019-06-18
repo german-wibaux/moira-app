@@ -19,31 +19,30 @@
                             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
                                 <a class="dropdown-item" href="pages-landing.html">
-                                    <span class="h6 mb-0">Landing Pages</span>
-                                    <p class="text-small text-muted">Showcase your product in style</p>
+                                    <span class="h6 mb-0">Crucifijos</span>
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
 
                                 <a class="dropdown-item" href="pages-app.html">
-                                    <span class="h6 mb-0">App Pages</span>
-                                    <p class="text-small text-muted">Build detailed, functional web apps</p>
+                                    <span class="h6 mb-0">Bandejas</span>
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
 
                                 <a class="dropdown-item" href="pages-inner.html">
-                                    <span class="h6 mb-0">Inner Pages</span>
-                                    <p class="text-small text-muted">Complete your online presence</p>
+                                    <span class="h6 mb-0">Porta retratos</span>
                                 </a>
 
 
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a routerLink='/' class="nav-link button hvr-wobble-bottom">Contacto</a>
+                            <a class="nav-link button hvr-wobble-bottom" data-toggle="modal" data-target="#exampleModal">
+                                Contacto
+                              </a>
                             <!-- <div class="dropdown-menu" aria-labelledby="componentsDropdown">
 
                                 <a class="dropdown-item" href="components-bootstrap.html">Bootstrap</a>
@@ -53,13 +52,13 @@
                             </div> -->
                         </li>
                         <li class="nav-item">
-                            <a class=" " routerLink='/login' fragment="acces"  *ngIf='!isLoggedIn()' (click)="onAnchorClick()" >Ingresar</a>
+                            <a class="nav-link button hvr-wobble-bottom" routerLink='/login' fragment="acces"  *ngIf='!isLoggedIn()' (click)="onAnchorClick()" >Ingresar</a>
                           </li>
                           <li class="nav-item">
-                              <a class=" " routerLink='/private' *ngIf='isLoggedIn()' >Administracion</a>
+                              <a class=" nav-link button hvr-wobble-bottom" routerLink='/private' *ngIf='isLoggedIn()' >Administracion</a>
                             </li>
                           <li class="nav-item" *ngIf='isLoggedIn()' >
-                              <a class=" " (click)='logout()' >Salir</a>
+                              <a class="nav-link button hvr-wobble-bottom" (click)='logout()' >Salir</a>
                             </li>
                     </ul>
                     <!-- <form class="form-inline col p-0 pl-md-2 pr-md-3">

@@ -1,82 +1,46 @@
-<div class="main-container">
-        <section class="space-sm">
-            <div class="container align-self-start">
-                <div class="row mb-5">
-                    <div class="col text-center">
-                        <!-- <a href="#">
-                            <img alt="Image" src="assets/img/logo-gray.svg" />
-                        </a> -->
-                    </div>
-                    <!--end of col-->
-                </div>
-                <!--end of row-->
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8 col-lg-7">
-                        <div class="card card-lg text-center">
-                            <div class="card-body">
-                                <div class="mb-5">
-                                    <!-- <h1 class="h2 mb-2">Hello again</h1> -->
-                                    <span>Ingrese los datos de su consulta</span>
-                                </div>
-                                <div class="row no-gutters justify-content-center">
-                                      
-                                    <form class="text-left col-lg-8" name="userform" method="post" #formCtrl="ngForm" >
-                                        <div class="form-group">
-                                            <label for="login-email">Titulo </label>
-                                            <input class="form-control form-control-lg" type="text" placeholder="Titulo consulta" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="login-password">Consulta</label>
-                                            <!-- <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Enter a password" [(ngModel)]="user.password"/> -->
-                                            <!-- <small>Forgot password? <a href="#">Reset here</a>                                                
-                                            </small> -->
-                                            <textarea class="form-control form-control-lg" name="" id="" cols="30" rows="10" placeholder="Consulta..."></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="login-email">Telefono </label>
-                                            <input class="form-control form-control-lg" type="email" placeholder="Telefono"  />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="login-email">Email </label>
-                                            <input class="form-control form-control-lg" type="email"  placeholder="Email" />
-                                        </div>
-      
-      
-                                        <div>
-                                            
-                                        </div>
-                                        <div class="text-center mt-3">
-                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Log in user site</button> -->
-                                            <button type="buton" class="btn btn-lg btn-primary" style="margin-bottom: 20px" (click)="onNotification()">
-                                                  Enviar consulta
-                                            </button>
-                                        </div>
-                                        
-                                    </form>
-                                    <!-- <div class="text-center mt-3">
-                                      <button class="btn btn-lg btn-primary" (click)='onClickGoogleLogin()' >Log in google</button>
-                                    </div> -->
-      
-                                    <div class="form-group">
-                                      
-                                   </div>
-      
-                                </div>
-                                <!--end of row-->
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <!-- <span class="text-small">Don't have an account yet? <a href="#">Create one</a>
-                            </span> -->
-                        </div>
-                    </div>
-                    <!--end of col-->
-                </div>
-                <!--end of row-->
-            </div>
-            <!--end of container-->
-        </section>
-        <!--end of section-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mandanos tu consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      
+      <div class="modal-body">
+        <form class="text-left col-lg-12" name="userform" (ngSubmit)="contactForm(form.form.value)" #form="ngForm">
 
+          <div class="form-group">
+            <label for="login-email">Consulta </label>
+            <input class="form-control form-control-lg" type="text" name="asunto" placeholder="Consulta" ngModel>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email">Telefono </label>
+            <input class="form-control form-control-lg" type="text" name="telefono" placeholder="Telefono" ngModel>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email">Email </label>
+            <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" ngModel>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Mensaje</label>
+            <textarea class="form-control form-control-lg" name="" id="" cols="30" rows="10" name="mensaje"
+              placeholder="Consulta..." ngModel></textarea>
+          </div>
+
+          <div class="text-center mt-3">
+            <!-- <button type="submit" class="btn btn-lg btn-primary">Log in user site</button> -->
+            <button type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 20px">
+              Enviar consulta
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

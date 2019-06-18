@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNotification() {
+  contactForm(contact) {
     alert('Esta funcionalidad no se encuentra disponible, por favor comunicarse al numero de telefono que se encuentra en el pie de la pagina')
   }
 
