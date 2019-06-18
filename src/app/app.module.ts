@@ -26,6 +26,9 @@ import { CarouselModule } from 'ngx-bootstrap';
 import { EditComponent } from './components/edit/edit.component';
 import { NewArticleComponent } from './components/new-article/new-article.component';
 import { ArticleService } from './services/article.service';
+import { UpdateArticleComponent } from './components/update-article/update-article.component';
+import { MessageService } from './services/message.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { ArticleService } from './services/article.service';
     FooterComponent,
     WaitingComponent,
     EditComponent,
-    NewArticleComponent
+    NewArticleComponent,
+    UpdateArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +55,11 @@ import { ArticleService } from './services/article.service';
     AngularFireModule,
     FormsModule,
     AngularFireStorageModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    HttpClientModule
     
   ],
-  providers: [AuthService, ArticleService],
+  providers: [AuthService, ArticleService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

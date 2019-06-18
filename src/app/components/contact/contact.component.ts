@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -7,13 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              public _MessageService: MessageService) { }
 
   ngOnInit() {
   }
 
-  contactForm(contact) {
-    alert('Esta funcionalidad no se encuentra disponible, por favor comunicarse al numero de telefono que se encuentra en el pie de la pagina')
+  contactForm(form) {
+    // this._MessageService.sendMessage(form).subscribe(() => {
+    //   Swal.fire({
+    //     title: 'Formulario de contacto',
+    //     text: 'Mensaje enviado correctamente',
+    //     type: 'success',
+    //     confirmButtonText: 'Cool'
+    //   })
+    // });
+    //console.log(form);
+    this._MessageService.sendMessage(form);
+    alert('El mensaje ha sido enviado');
+     
   }
 
 }

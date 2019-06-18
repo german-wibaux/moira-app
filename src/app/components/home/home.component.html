@@ -33,7 +33,7 @@
 
             <div class="carousel-cell col-9 col-md-8 col-lg-5 text-center">
                 <a href="#" class="d-block mb-3">
-                    <img alt="Image" src="assets/img/moira/articles/DSC_6220.jpg" class="img-fluid rounded" />
+                    <img alt="Image" src="assets/img/moira/articles/DSC_6205.jpg" class="img-fluid rounded" />
                 </a>
                 
             </div>
@@ -86,20 +86,23 @@
             <!--end of row-->
             <ul class="row feature-list feature-list-sm">
 
-                <li class="col-12 col-md-6 col-lg-4">
+                <li *ngFor=" let article of articles " class="col-12 col-md-6 col-lg-4">
                     <div class="card">
                         <a href="#">
-                            <img class="card-img-top" src="assets/img/moira/articles/DSC_6097.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="{{article.images[0]}}" alt="Card image cap">
                         </a>
-                        
+                        <p>{{article.name}}</p> <br>
+                                <p>{{article.price}}</p>
                         <div class="card-footer card-footer-borderless d-flex justify-content-between">
-                            <div class="text-small">
+                                
+                            <!-- <div class="text-small"> -->
+                                
                                 <!-- <ul class="list-inline">
                                     <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
                                     <li class="list-inline-item"><i class="icon-message"></i> 14</li>
                                 </ul> -->
-                            </div>
-                            <div class="dropup">
+                            <!-- </div>
+                            <div class="dropup"> -->
                                 <!-- <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="icon-dots-three-horizontal"></i>
                                 </button> -->
@@ -110,7 +113,7 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Report</a>
                                 </div> -->
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </li>

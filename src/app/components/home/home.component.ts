@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.articlesService.getArticles().subscribe( articles => {
       /** List every properties */
       this.articles = articles;
-      //console.log(this.articles);
+      console.log(this.articles);
         
     });
     //this.propertiesService.getProperty().subscribe( property => {

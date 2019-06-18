@@ -32,4 +32,17 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDeleteArticle(article: ArticleInterface){
+    // this.propertiesService.updateProperty(property);
+    //   this.router.navigate(['/edit']);
+    // property.available = false;
+    //this.properties = [];
+    //this.propertiesService.updateProperty(property);
+    //this.router.navigateByUrl('/edit');
+
+    this.articlesService.deletArticle(article);
+    this.route.navigate(['/private']);
+
+   }
+
 }
