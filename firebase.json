@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/taul-app-final",
+    "public": "dist/moira-app-final",
     "ignore": [
       "firebase.json",
       "**/.*",

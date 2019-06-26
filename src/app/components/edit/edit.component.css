@@ -1,0 +1,23 @@
+.btn-primary {
+    background-color: #b3c6ff;
+    border-color: #b3c6ff;
+    color: black;
+}
+
+.card-body {
+    background-color: #fff0b3 !important ;
+    border-color: #fff0b3 !important ;
+    color: black;
+}
+
+.btn-success  {
+    background-color: #ccffdd !important ;
+    border-color: #ccffdd !important ;
+    color: black;
+}
+
+.btn-danger {
+    background-color: #ffb3b3 !important ;
+    border-color: #ffb3b3 !important ;
+    color: black;
+}

@@ -1,3 +1,14 @@
 .dropdown-item {
     cursor: pointer;
 }
+
+.d-flex {
+    background-color: #fff0b3;    
+    border-bottom: 2px solid #b3c6ff;
+}
+
+.btn-primary {
+    background-color: #b3c6ff;
+    border-color: #b3c6ff;
+    color: black;
+}
