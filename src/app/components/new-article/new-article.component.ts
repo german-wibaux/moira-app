@@ -18,6 +18,10 @@ export class NewArticleComponent implements OnInit {
   articleToEdit: ArticleInterface;
   
   uploadPercent: Observable<number>;
+  uploadPercent1: Observable<number>;
+  uploadPercent2: Observable<number>;
+  uploadPercent3: Observable<number>;
+  uploadPercent4: Observable<number>;
 
   article: ArticleInterface = {
     code:'',
@@ -66,59 +70,5 @@ export class NewArticleComponent implements OnInit {
     
     //this.router.navigate(['/private']);
   }
-
-  uploadFile(event) {
-    // console.log(event);
-
-    const file = event.target.files[0];
-
-
-    if (file.type.split('/')[0] !== 'image') {
-      console.error('unsupported file type moira-app')
-      return;
-    }
-    let loading = true;
-    const day = new Date();
-    const path = 'articles/' + day.getTime() + '/' + file.name;
-    const customMetadata = { app: 'moira-app' };
-    const ref = this.storage.ref(path);
-    this.task = this.storage.upload(path, file, { customMetadata });
-    this.uploadPercent = this.task.percentageChanges();
-
-
-    return from(this.task).pipe(
-      switchMap(() => ref.getDownloadURL()),
-      tap(url => {
-        // use url here, e.g. assign it to a model  
-        this.article.images.splice(0,0,url);
-      }),
-      finalize(() => loading = false)
-    ).subscribe(() => {
-      // success
-      console.log('image paso');
-      console.log(this.article.images);
-    }, error => {
-      // failure
-      console.log(error);
-    });    
-
-    //*********************Codigo pa la barra de progreso y algo mas si pinta************************
-    //     <div>{{ uploadPercent | async }}</div>
-  }
-
-  // deleteCurso(property) {
-  //   alert("La propiedad ha sido eliminada");
-  //   this.router.navigate(['/edit']);
-  //   console.log(property.available + '////' + property.code);
-  // }
-
-  // onDeleteProperty(property: PropertyInterface){
-  //   // this.propertiesService.updateProperty(property);
-  //   //   this.router.navigate(['/edit']);
-  //   property.available = false;
-  //   this.properties = [];
-  //   this.propertiesService.updateProperty(property);
-  //   this.router.navigateByUrl('/edit');
-  //  }
 
 }

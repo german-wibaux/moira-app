@@ -89,7 +89,7 @@
                 <li *ngFor=" let article of articles " class="col-12 col-md-6 col-lg-4">
                     <div class="card">
                         <a href="#">
-                            <img class="card-img-top" src="{{article.images[0]}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{article.images[0]}}" alt="Card image cap" *ngIf="article.images[0]!='borrado'">
                         </a>
                         <p>{{article.name}}</p> <br>
                                 <p>{{article.price}}</p>
@@ -121,6 +121,9 @@
 
             </ul>
             <!--end of row-->
+
+            
+
         </div>
         <!--end of container-->
     </section>

@@ -21,3 +21,7 @@
     border-color: #ffb3b3 !important ;
     color: black;
 }
+
+.row > .col-sm > .form-row {
+    width: 30%;
+}
