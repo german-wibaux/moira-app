@@ -56,22 +56,38 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe( result => {
       this.articlesService.getArticle(result['id']).subscribe( article => {
         this.article = article;
-        console.log(this.article)});
+      });
     });
       
   }
 
   deletePhoto(url, index) {  
     
-    this.article.images[index] = 'borrado';
-    this.url.url= url;
-    this.urlphotoService.addUrl(this.url);
+    if ((index+1) == 5) {
+      this.article.images[index] = 'borrado';
+      this.url.url= url;
+      this.urlphotoService.addUrl(this.url);
+      this.onUpdateArticle(this.article);
+    } else if (this.article.images[index+1] == 'borrado' ) {
+        this.article.images[index] = 'borrado';
+        this.url.url= url;
+        this.urlphotoService.addUrl(this.url);
+        this.onUpdateArticle(this.article);        
+    } else {
+        let aux = index + 1;
+        alert('La imagen' + ' ' + aux + ' '+ 'no ha sido eliminada');
+    }
+
+    
   }
 
   onUpdateArticle(article: ArticleInterface){
     this.articlesService.updateArticle(article);
-    alert('El articulo ha sido editado con exito');  
-    this.router.navigate(['/private']);   
+    alert('El articulo ha sido editado con exito');
+    this.route.params.subscribe( result => {      
+        this.router.navigate(['/update-article' , result['id']]); 
+    });  
+      
    }
 
    uploadFile(event) {
@@ -99,12 +115,15 @@ export class EditComponent implements OnInit {
         // use url here, e.g. assign it to a model  
         this.article.images.splice(0,0,url);
         
+        
       }),
       finalize(() => loading = false)
     ).subscribe(() => {
       // success
-      console.log('image paso');
-      console.log(this.article.images);
+      console.log('Articulo guardado');
+      this.onUpdateArticle(this.article);
+      // this.article.images.splice(0,0,url);
+      //console.log(this.article.images);
     }, error => {
       // failure
       console.log(error);
@@ -116,6 +135,11 @@ export class EditComponent implements OnInit {
 
   uploadFile1(event) {
     // console.log(event);
+
+    if (!this.article.images[0] || this.article.images[0] == 'borrado') {
+      alert("Cargar foto anterior");
+      
+    } else { 
 
     const file = event.target.files[0];
 
@@ -142,8 +166,8 @@ export class EditComponent implements OnInit {
       finalize(() => loading = false)
     ).subscribe(() => {
       // success
-      console.log('image paso');
-      console.log(this.article.images);
+      console.log('Articulo guardado');
+      this.onUpdateArticle(this.article);
     }, error => {
       // failure
       console.log(error);
@@ -151,10 +175,15 @@ export class EditComponent implements OnInit {
 
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
+    }
   }
 
   uploadFile2(event) {
     // console.log(event);
+
+    if (!this.article.images[1] || this.article.images[1] == 'borrado') {
+      alert("Cargar foto anterior");
+    } else { 
 
     const file = event.target.files[0];
 
@@ -181,8 +210,8 @@ export class EditComponent implements OnInit {
       finalize(() => loading = false)
     ).subscribe(() => {
       // success
-      console.log('image paso');
-      console.log(this.article.images);
+      console.log('Articulo guardado');
+      this.onUpdateArticle(this.article);
     }, error => {
       // failure
       console.log(error);
@@ -191,9 +220,14 @@ export class EditComponent implements OnInit {
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
   }
+}
 
   uploadFile3(event) {
     // console.log(event);
+
+    if (!this.article.images[2] || this.article.images[2] == 'borrado') {
+      alert("Cargar foto anterior");
+    } else { 
 
     const file = event.target.files[0];
 
@@ -220,8 +254,8 @@ export class EditComponent implements OnInit {
       finalize(() => loading = false)
     ).subscribe(() => {
       // success
-      console.log('image paso');
-      console.log(this.article.images);
+      console.log('Articulo guardado');
+      this.onUpdateArticle(this.article);
     }, error => {
       // failure
       console.log(error);
@@ -230,9 +264,14 @@ export class EditComponent implements OnInit {
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
   }
+}
 
   uploadFile4(event) {
     // console.log(event);
+
+    if (!this.article.images[3] || this.article.images[3] == 'borrado') {
+      alert("Cargar foto anterior");
+    } else { 
 
     const file = event.target.files[0];
 
@@ -259,8 +298,8 @@ export class EditComponent implements OnInit {
       finalize(() => loading = false)
     ).subscribe(() => {
       // success
-      console.log('image paso');
-      console.log(this.article.images);
+      console.log('Articulo guardado');
+      this.onUpdateArticle(this.article);
     }, error => {
       // failure
       console.log(error);
@@ -269,5 +308,12 @@ export class EditComponent implements OnInit {
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
   }
+}
+
+updateArticle() {
+  this.onUpdateArticle(this.article);  
+}
+
+
 
 }

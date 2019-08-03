@@ -21,3 +21,8 @@
     border-color: #ffb3b3 !important ;
     color: black;
 }
+
+.col-sm {
+    max-width: 20%;
+    width: 20%;
+}
