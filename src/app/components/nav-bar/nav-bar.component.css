@@ -3,6 +3,10 @@
     height: 8rem;
 }
 
+.navbar-brand {
+  color: black;
+}
+
 .bg-dark{
   background-color: #9C9A96 !important;
 }
@@ -101,3 +105,32 @@
 .nav-link {
   cursor: pointer;
 }
+
+.navbar-nav {
+  padding-left: 8rem;
+} 
+
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: .9rem;
+      padding-left: .9rem;
+  }
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: .9rem;
+  padding-left: .9rem;
+}
+
+.navbar-nav > li:first-child > a {
+  color: black;
+}
+
+.list-inline-item a {
+  color: #adb5bd;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease;
+  text-decoration: none;
+}
+
