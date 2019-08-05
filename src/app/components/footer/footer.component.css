@@ -17,5 +17,11 @@ img {
     height: 6rem !important;
 }
 
+@media screen and (max-width: 575px) {
+    nav > .col-auto:first-child {
+        padding-left: 10rem;
+    }
+  }
+
 
 

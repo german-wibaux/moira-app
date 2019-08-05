@@ -134,3 +134,27 @@
   text-decoration: none;
 }
 
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,.5);
+  border-color: #dedede;
+}
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1.5px solid;
+  border-radius: .3rem;
+}
+
+@media screen and (max-width: 575px) {
+  .navbar {
+    justify-content: end !important;
+  }
+}
+
+button:focus {
+  outline: none !important;
+}
+
