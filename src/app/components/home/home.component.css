@@ -20,6 +20,12 @@
     display: flex !important;
     /* right: 0; */
     justify-content: flex-end !important;
+    background-color: #ffe2c3;
+}
+
+.card > a {
+    height: 100%;
+    background-color: #ffe2c3;
 }
 
 .tag {
@@ -65,8 +71,17 @@ body {
     }
 
     .bg-dark {
-        background-color: #79d2a6!important;
+        background-color: #a8c5d8!important;
     }
+
+    .btn-secondary {
+        background-color: #FFE2C3!important;
+        color: #000;
+      }
+      
+      .btn-secondary:hover {
+        background-color: #FFE2C3 !important;
+      }
    
     
 

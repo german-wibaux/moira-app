@@ -1,12 +1,16 @@
 .footer-short {
     padding: 1rem !important;
-    background-color: #c6ecd9 !important;   
+    background-color: #cD8231 !important;   
 }
 
 .custom-footer{
     display: flex;
     justify-content: center;
     align-items: baseline;
+}
+
+ .list-inline-item > a {
+    color: #000;
 }
 
 .row {

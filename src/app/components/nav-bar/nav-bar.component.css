@@ -8,8 +8,10 @@
 }
 
 .bg-dark{
-  background-color: #c6ecd9 !important;
+  background-color: #CD8231 !important;
 }
+
+
 
 /* Grow */
 .hvr-grow {
@@ -104,6 +106,7 @@
 
 .nav-link {
   cursor: pointer;
+  font-size: 1.15rem;
 }
 
 .navbar-nav {
@@ -128,7 +131,7 @@
 }
 
 .list-inline-item a {
-  color: #adb5bd;
+  color: #000;
   -webkit-transition: color .2s ease;
   transition: color .2s ease;
   text-decoration: none;
