@@ -29,6 +29,9 @@ import { ArticleService } from './services/article.service';
 import { UpdateArticleComponent } from './components/update-article/update-article.component';
 import { MessageService } from './services/message.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ObrasMoiraComponent } from './components/obras-moira/obras-moira.component';
+import { ObrasAmigosComponent } from './components/obras-amigos/obras-amigos.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { HttpClientModule } from '@angular/common/http';
     WaitingComponent,
     EditComponent,
     NewArticleComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    ObrasMoiraComponent,
+    ObrasAmigosComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,9 @@ import { AboutComponent } from './components/about/about.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { EditComponent } from './components/edit/edit.component';
 import { NewArticleComponent } from './components/new-article/new-article.component';
+import { ObrasMoiraComponent } from './components/obras-moira/obras-moira.component';
+import { ObrasAmigosComponent } from './components/obras-amigos/obras-amigos.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'wait', component: WaitingComponent },
     { path: 'edit', canActivate:[AuthGuardService], component: EditComponent },
+    { path: 'obras-moira', component: ObrasMoiraComponent },
+    { path: 'obras-amigos', component: ObrasAmigosComponent },
+    { path: 'todo', component: TodoComponent },
     { path: '**', component: NotFoundComponent }
 ];
 
