@@ -23,6 +23,12 @@ export class EditComponent implements OnInit {
   uploadPercent3: Observable<number>;
   uploadPercent4: Observable<number>;
 
+  religiosos = ['iconos','cruces','biblias','medallones','retablos','tripticos','pantocrator','virgenes','sagrada-familia','cuneros'];
+  decorativos = ['bandejas','portaretrato','espejos','apoyaplatos','apoyafuentes','platos-giratorios'];
+  amigos = ['anadry','amalia','enith','gabriela'];
+  vintage = ['vajilla','cristaleria','adornos','muebles'];
+  categories = [];
+
   article: ArticleInterface = {
     code:'',
     description: '',
@@ -30,7 +36,9 @@ export class EditComponent implements OnInit {
     kind: '',
     name: '',
     price: '',
-    state: ''
+    state: '',
+    created: 0,
+    category: '',
   }
 
   url: UrldeletedInterface = {
@@ -62,13 +70,13 @@ export class EditComponent implements OnInit {
   }
 
   deletePhoto(url, index) {  
-    
+    console.log(index);
     if ((index+1) == 5) {
       this.article.images[index] = 'borrado';
       this.url.url= url;
       this.urlphotoService.addUrl(this.url);
       this.onUpdateArticle(this.article);
-    } else if (this.article.images[index+1] == 'borrado' ) {
+    } else if (this.article.images[index+1] != 'borrado' ) {
         this.article.images[index] = 'borrado';
         this.url.url= url;
         this.urlphotoService.addUrl(this.url);
@@ -131,6 +139,47 @@ export class EditComponent implements OnInit {
 
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
+  }
+
+  onChangeCategory(event) {
+    
+    //this.article.kind = event.target.value;
+    let option = event.target.value;
+    
+    switch (option) {
+      case 'religiosos':
+        this.article.category = 'religiosos';
+        this.categories = this.religiosos;
+        this.updateArticle();
+        break;
+
+      case 'decorativos':
+        this.article.category = 'decorativos';
+        this.categories = this.decorativos;
+        this.updateArticle();
+        break;
+      
+      case 'vintage':
+        this.article.category = 'vintage';
+        this.categories = this.vintage;
+        this.updateArticle();
+        break;
+      case 'amigos':
+        this.article.category = 'amigos';
+        this.categories = this.amigos;
+        this.updateArticle();
+        break;
+      default:
+        break;
+    }
+    // this.categories = this.amigos
+    // console.log(this.categories);
+    // this.categories = 
+  }
+
+  onChangeKind(event) {
+    this.article.kind = event.target.value;
+    this.updateArticle();
   }
 
   uploadFile1(event) {

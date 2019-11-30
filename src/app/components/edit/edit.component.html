@@ -45,12 +45,35 @@
                     </div>
                 </div>
 
-                <div class="form-row form-group">
+                <!-- <div class="form-row form-group">
                     <div class="col">
                         <input [(ngModel)]='article.kind' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
                             class="form-control form-control-lg" type="text" placeholder="Categoria" (change)="updateArticle()" />
                     </div>
-                </div>
+                </div> -->
+
+                <div class="form-row form-group">
+                        <select (change)="onChangeCategory($event)"  class="custom-select">
+                            <option selected disabled hidden>{{ article.category }}</option>
+                            <option value="religiosos">Religiosos</option>
+                            <option value="decorativos">Decorativos</option>
+                            <option value="amigos">Obras amigos</option>
+                            <option value="vintage">De todo objetos vintage</option>
+                          
+                        </select>
+                    </div>
+        
+                    <div class="form-row form-group">
+        
+                            <select   (change)="onChangeKind($event)" class="custom-select">
+                                    <option selected disabled hidden>{{ article.kind }}</option>
+                                <option [value]="category" *ngFor="let category of categories"  >{{category}}</option>
+                            </select>
+                        
+        
+        
+                    </div>
+  
 
 
 

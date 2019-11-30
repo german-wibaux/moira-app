@@ -45,12 +45,46 @@
                   </div>
               </div>
 
-              <div class="form-row form-group">
+              <!-- <div class="form-row form-group">
                 <div class="col">
                     <input [(ngModel)]='article.kind' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
                         class="form-control form-control-lg" type="text" placeholder="Categoria" />
                 </div>
-              </div>
+              </div> -->
+
+              <div class="form-row form-group">
+                <!-- <div class="col">
+              <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
+          </div> -->
+                <select (change)="onChangeCategory($event)"  class="custom-select">
+                    <option selected disabled hidden>Categoria</option>
+                    <option value="religiosos">Religiosos</option>
+                    <option value="decorativos">Decorativos</option>
+                    <option value="amigos">Obras amigos</option>
+                    <option value="vintage">De todo objetos vintage</option>
+                </select>
+            </div>
+
+            <div class="form-row form-group">
+                <!-- <div class="col">
+              <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
+          </div> -->
+
+
+                <select (change)="onChangeKind($event)" class="custom-select" *ngIf = categories>
+                        <option selected disabled hidden>Tipo</option>
+                    <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+                </select>
+
+
+                <!-- <select (change)="onChangeArticle($event)" class="custom-select">
+                    <option selected disabled hidden>Categoria</option>
+                    <option value="religiosos">Religiosos</option>
+                    <option value="decorativos">Decorativos</option>
+                    <option value="obras-amigos">Obras amigos</option>
+                    <option value="todo-vintage">De todo objetos vintage</option>
+                </select> -->
+            </div>
 
 
 

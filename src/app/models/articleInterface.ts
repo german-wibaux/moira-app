@@ -6,6 +6,8 @@ export interface ArticleInterface {
     kind?: string;
     name?: string;
     price?: string;
-    state?: string;    
+    state?: string;
+    created?: number;
+    category?: String;    
 }
 

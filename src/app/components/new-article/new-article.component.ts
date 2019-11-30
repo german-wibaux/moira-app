@@ -30,8 +30,16 @@ export class NewArticleComponent implements OnInit {
     kind: '',
     name: '',
     price: '',
-    state: ''
+    state: '',
+    created: 0,
+    category: '',
   }
+
+  religiosos = ['iconos','cruces','biblias','medallones','retablos','tripticos','pantocrator','virgenes','sagrada-familia','cuneros'];
+  decorativos = ['bandejas','portaretrato','espejos','apoyaplatos','apoyafuentes','platos-giratorios'];
+  amigos = ['anadry','amalia','enith','gabriela'];
+  vintage = ['vajilla','cristaleria','adornos','muebles'];
+  categories = [];
 
   downloadURL: Observable<string>; // For download files
   snapshot: Observable<any>;
@@ -97,6 +105,8 @@ export class NewArticleComponent implements OnInit {
   }
 
   onSaveArticle() {
+    let createdNow = Date.now();
+    this.article.created = createdNow;
     this.articlesService.addArticle(this.article).then( response => {
       if (response) {
         alert("La propiedad ha sido ingresada con exito");
@@ -270,6 +280,42 @@ export class NewArticleComponent implements OnInit {
   }
     //*********************Codigo pa la barra de progreso y algo mas si pinta************************
     //     <div>{{ uploadPercent | async }}</div>
+  }
+
+  onChangeCategory(event) {
+    
+    //this.article.kind = event.target.value;
+    let option = event.target.value;
+    
+    switch (option) {
+      case 'religiosos':
+        this.article.category = 'religiosos';
+        this.categories = this.religiosos;
+        break;
+
+      case 'decorativos':
+        this.article.category = 'decorativos';
+        this.categories = this.decorativos;
+        break;
+      
+      case 'vintage':
+        this.article.category = 'vintage';
+        this.categories = this.vintage;
+        break;
+      case 'amigos':
+        this.article.category = 'amigos';
+        this.categories = this.amigos;
+        break;
+      default:
+        break;
+    }
+    // this.categories = this.amigos
+    // console.log(this.categories);
+    // this.categories = 
+  }
+
+  onChangeKind(event) {
+    this.article.kind = event.target.value;
   }
 
 

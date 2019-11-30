@@ -196,5 +196,7 @@ export class UpdateArticleComponent implements OnInit {
     //     <div>{{ uploadPercent | async }}</div>
   }
 
+  
+
 
 }

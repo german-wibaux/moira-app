@@ -1,3 +1,4 @@
+
 .btn-primary {
     background-color: #b3c6ff;
     border-color: #b3c6ff;
@@ -24,4 +25,8 @@
 
 .row > .col-sm > .form-row {
     width: 30%;
+}
+
+.custom-select {
+    text-transform: capitalize;
 }
