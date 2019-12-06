@@ -16,6 +16,34 @@
     background-color: #dedede;
 }
 
+.h-divider {
+    margin: auto;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    width: 80%;
+    position: relative;
+
+  }
+
+h2 {
+    font-size: 1.5rem !important;
+}
+
+.h-divider .shadow {
+    overflow: hidden;
+    height: 4px;
+    box-shadow: unset !important;
+  }
+  
+  .h-divider .shadow:after {
+    content: '';
+    display: block;
+    margin: -25px auto 0;
+    width: 100%;
+    height: 25px;
+    border-radius: 125px/12px;
+    box-shadow: 0 0 8px black;
+  }
 
 
 .modal-body {

@@ -82,12 +82,19 @@ body {
       .btn-secondary:hover {
         background-color: #FFE2C3 !important;
       }
-      .card-text {
-          text-transform: capitalize;
-      }
-      .back {
+
+      .main-container {
+        height: 72%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: rgba(168,197,216,0.4);
-      }
+    }
+
+    .card-text {
+        text-transform: capitalize;
+    }
+   
     
 
 

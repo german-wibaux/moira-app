@@ -43,7 +43,7 @@
 
         </div>
     </section>
-    <section class="space-sm">
+    <section class="space-sm back">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -64,7 +64,7 @@
         <!--end of container-->
     </section>
     <!--end of section-->
-    <section class="space-sm flush-with-above">
+    <section class="space-sm flush-with-above back">
         <div class="container">
             <!-- <div class="row mb-4">
                 <div class="col-12 d-flex justify-content-between">
@@ -87,13 +87,13 @@
             <ul class="row feature-list feature-list-sm">
 
                 <li *ngFor=" let article of articles " class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
+                    <!-- <div class="card">
                         <a href="#">
                             <img class="card-img-top" src="{{article.images[0]}}" alt="Card image cap" *ngIf="article.images[0]!='borrado'">
                         </a>
                         <p>{{article.name}}</p> <br>
                                 <p>{{article.price}}</p>
-                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between"> -->
                                 
                             <!-- <div class="text-small"> -->
                                 
@@ -114,8 +114,21 @@
                                     <a class="dropdown-item" href="#">Report</a>
                                 </div> -->
                             <!-- </div> -->
+                        <!-- </div>
+                    </div> -->
+
+                    <div class="card">
+                            <img class="card-img-top" src="{{article.images[0]}}" alt="Card image cap"
+                            *ngIf="article.images[0]!='borrado'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{article.name}}</h5>
+                            <p class="card-text">{{article.description}}</p> 
+                            <p class="card-text">{{article.category}}</p>
+                            <p class="card-text"><small class="text-muted">{{article.price}}</small></p>
                         </div>
                     </div>
+
+
                 </li>
                 <!--end of col-->
 

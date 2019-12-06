@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ObrasMoiraComponent } from './components/obras-moira/obras-moira.component';
 import { ObrasAmigosComponent } from './components/obras-amigos/obras-amigos.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { ResultViewComponent } from './components/result-view/result-view.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TodoComponent } from './components/todo/todo.component';
     UpdateArticleComponent,
     ObrasMoiraComponent,
     ObrasAmigosComponent,
-    TodoComponent
+    TodoComponent,
+    ResultViewComponent
   ],
   imports: [
     BrowserModule,

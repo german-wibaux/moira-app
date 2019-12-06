@@ -42,6 +42,18 @@ export class ArticleService {
     return this.articles;
   }
 
+  getArticlesSearch(search) {
+    this.articleCollection = this.afs.collection<ArticleInterface>('articles', ref => ref.where('kind', '==', search));
+    this.articles = this.articleCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as ArticleInterface;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+    return this.articles;
+  }
+
   public getArticle(article) {
     this.articleDoc = this.afs.collection('articles').doc(article);
     this.article = this.articleDoc.snapshotChanges().pipe(map(action => {

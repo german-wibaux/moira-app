@@ -4,14 +4,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-         <h2>Telefono: +54 9 11 3043-9197</h2>  
-          <h2>WhatsApp: +58 426-5164334</h2> 
-          <h2>Email: Moiraimeldagarcia@gmail.com</h2>    
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2>Telefono: +54 9 11 3043-9197</h2>
+        <h2>WhatsApp: +58 426-5164334</h2>
+        <h2>Email: Moiraimeldagarcia@gmail.com</h2>
+        <div class="h-divider">
+          <div class="shadow"></div>
+        </div>
         <h4 class="modal-title" id="exampleModalLabel">Mandanos tu consulta</h4>
-        
+
+
       </div>
       <div class="modal-body">
         <form class="text-left col-lg-12" name="userform" (ngSubmit)="contactForm(form.form.value)" #form="ngForm">
@@ -23,12 +27,12 @@
 
           <div class="form-group">
             <label for="login-email">Telefono </label>
-            <input class="form-control form-control-lg" type="text" name="telefono"  ngModel>
+            <input class="form-control form-control-lg" type="text" name="telefono" ngModel>
           </div>
 
           <div class="form-group">
             <label for="login-email">Email </label>
-            <input class="form-control form-control-lg" type="email" name="email"  ngModel>
+            <input class="form-control form-control-lg" type="email" name="email" ngModel>
           </div>
 
           <div class="form-group">
