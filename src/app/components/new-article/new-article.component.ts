@@ -5,6 +5,8 @@ import { ArticleService } from 'src/app/services/article.service';
 import { Observable, from } from 'rxjs';
 import { AngularFireUploadTask, AngularFireStorage } from 'angularfire2/storage';
 import { switchMap, tap, finalize } from 'rxjs/operators';
+import { UrldeletedInterface } from 'src/app/models/urldeletedInterface';
+import { UrlsPhotoService } from 'src/app/services/urls-photo.service';
 
 @Component({
   selector: 'app-new-article',
@@ -35,6 +37,10 @@ export class NewArticleComponent implements OnInit {
     category: '',
   }
 
+  url: UrldeletedInterface = {
+    url: ''
+  }
+
   religiosos = ['iconos','cruces','biblias','medallones','retablos','tripticos','pantocrator','virgenes','sagrada-familia','cuneros'];
   decorativos = ['bandejas','portaretrato','espejos','apoyaplatos','apoyafuentes','platos-giratorios'];
   amigos = ['anadry','amalia','enith','gabriela'];
@@ -51,6 +57,7 @@ export class NewArticleComponent implements OnInit {
     private router: Router,
     private articlesService: ArticleService,
     private storage: AngularFireStorage,
+    private urlphotoService: UrlsPhotoService
   ) { 
   }
     
@@ -316,6 +323,13 @@ export class NewArticleComponent implements OnInit {
 
   onChangeKind(event) {
     this.article.kind = event.target.value;
+  }
+
+  deletePhoto(url, index) {  
+    
+    this.article.images[index] = 'borrado';
+    this.url.url= url;
+    this.urlphotoService.addUrl(this.url);
   }
 
 

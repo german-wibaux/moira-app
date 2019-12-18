@@ -70,13 +70,14 @@ export class EditComponent implements OnInit {
   }
 
   deletePhoto(url, index) {  
-    console.log(index);
+    console.log(this.article.images[index+1]);
     if ((index+1) == 5) {
       this.article.images[index] = 'borrado';
       this.url.url= url;
       this.urlphotoService.addUrl(this.url);
       this.onUpdateArticle(this.article);
-    } else if (this.article.images[index+1] != 'borrado' ) {
+      console.log(this.article.images[index+1]);
+    } else if (this.article.images[index] != 'borrado' ) {
         this.article.images[index] = 'borrado';
         this.url.url= url;
         this.urlphotoService.addUrl(this.url);

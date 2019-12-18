@@ -94,11 +94,11 @@
                           <div class="col">
                               <p>Imagen 1</p>
                               <input type="file" (change)="uploadFile($event)" accept=".png,.jpg"
-                                  *ngIf="!article.images[0] " />
+                              *ngIf="!article.images[0] || article.images[0] == 'borrado'  " />
                               <div>{{ uploadPercent | async }}</div>
 
                               <a href='{{ article.images[0] }}' target="_blank"
-                                  *ngIf="article.images[0] && article.images[0] != 'borrado' ">Imagen
+                              *ngIf="article.images[0] && article.images[0] != 'borrado'  ">Imagen
                                   1</a>
                               <!-- <div class="progress">
                                     <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
@@ -113,7 +113,7 @@
                             <div class="col">
                                 <p>Imagen 2</p>
                                 <input type="file" (change)="uploadFile1($event)" accept=".png,.jpg"
-                                    *ngIf="!article.images[1] " />
+                                *ngIf="!article.images[1] || article.images[1] == 'borrado'  " />
                                 <div>{{ uploadPercent1 | async }}</div>
   
                                 <a href='{{ article.images[1] }}' target="_blank"
@@ -132,7 +132,7 @@
                             <div class="col">
                                 <p>Imagen 3</p>
                                 <input type="file" (change)="uploadFile2($event)" accept=".png,.jpg"
-                                    *ngIf="!article.images[2] " />
+                                *ngIf="!article.images[2] || article.images[2] == 'borrado'  " />
                                 <div>{{ uploadPercent2 | async }}</div>
   
                                 <a href='{{ article.images[2] }}' target="_blank"
@@ -151,7 +151,7 @@
                             <div class="col">
                                 <p>Imagen 4</p>
                                 <input type="file" (change)="uploadFile3($event)" accept=".png,.jpg"
-                                    *ngIf="!article.images[3] " />
+                                *ngIf="!article.images[3] || article.images[3] == 'borrado'  " />
                                 <div>{{ uploadPercent3 | async }}</div>
   
                                 <a href='{{ article.images[3] }}' target="_blank"
@@ -170,7 +170,7 @@
                             <div class="col">
                                 <p>Imagen 5</p>
                                 <input type="file" (change)="uploadFile4($event)" accept=".png,.jpg"
-                                    *ngIf="!article.images[4] " />
+                                *ngIf="!article.images[4] || article.images[4] == 'borrado'  " />
                                 <div>{{ uploadPercent4 | async }}</div>
   
                                 <a href='{{ article.images[4] }}' target="_blank"
