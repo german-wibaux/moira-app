@@ -16,6 +16,7 @@ import { ObrasMoiraComponent } from './components/obras-moira/obras-moira.compon
 import { ObrasAmigosComponent } from './components/obras-amigos/obras-amigos.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { ResultViewComponent } from './components/result-view/result-view.component';
+import { ArticleComponent } from './components/article/article.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'wait', component: WaitingComponent },
     { path: 'edit', canActivate:[AuthGuardService], component: EditComponent },
     { path: 'obras-moira', component: ObrasMoiraComponent },
+    { path: 'details/:id', component: ArticleComponent },
     { path: 'obras-amigos', component: ObrasAmigosComponent },
     { path: 'todo', component: TodoComponent },
     { path: '**', component: NotFoundComponent }

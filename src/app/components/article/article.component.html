@@ -1,0 +1,80 @@
+<section class="bg-white space-sm"  >
+  <div class="container">
+    <div class="row justify-content-between">
+      
+      <!--end of col-->
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+<!--end of section-->
+<section class="space-sm" *ngIf="article != null" > 
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-12 col-md-8 col-lg-8">
+
+
+        <div id="image-principal" class="col-lg-7 mb-4 mb-sm-0">
+          <img alt="Image" src="{{ article.images[0] }}" class="rounded img-fluid">
+        </div>
+
+
+        <!--end of video cover-->
+        <hr>
+        <h5 class="mb-4">Descripción</h5>
+        <hr>
+        <article>
+          {{ article.description }}
+        </article>
+        <hr>
+
+      </div>
+      <!--end of col-->
+      <div class="col-12 col-md-4">
+        
+        <!-- end card -->
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div><i class="icon-text-document mr-1"></i> Created</div>
+                <span>17/11/2017</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div><i class="icon-edit mr-1"></i> Last updated</div>
+                <span>23/12/2017</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div><i class="icon-thumbs-up mr-1"></i> Likes</div>
+                <span>214</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div><i class="icon-share mr-1"></i> Shares</div>
+                <span>52</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- end card -->
+        <div class="card">
+          
+        </div>
+        <!-- end card -->
+      </div>
+      <!--end of col-->
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+
+  
+
+</section>
+<app-waiting *ngIf="article == null"></app-waiting>

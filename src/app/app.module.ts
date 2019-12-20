@@ -33,6 +33,7 @@ import { ObrasMoiraComponent } from './components/obras-moira/obras-moira.compon
 import { ObrasAmigosComponent } from './components/obras-amigos/obras-amigos.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { ResultViewComponent } from './components/result-view/result-view.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ResultViewComponent } from './components/result-view/result-view.compon
     ObrasMoiraComponent,
     ObrasAmigosComponent,
     TodoComponent,
-    ResultViewComponent
+    ResultViewComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
