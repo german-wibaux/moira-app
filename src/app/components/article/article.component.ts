@@ -14,6 +14,7 @@ export class ArticleComponent implements OnInit {
   article: ArticleInterface = null;
   images: String[] = [];
   slides = [];
+  slide: String;
   activeSlideIndex = 0;
   // url: SafeResourceUrl;
 
@@ -22,18 +23,22 @@ export class ArticleComponent implements OnInit {
               public sanitizer:DomSanitizer) { }
 
   ngOnInit() { 
-   // this.propertyService.getProperty()
-   console.log(this.article);
    this.route.params.subscribe( result => {
      this.articleService.getArticle(result['id']).subscribe( resultArt => {
       this.article = resultArt;
       this.images = this.article.images;
-      console.log(this.article.images[0]);
-      for (let i = 0; i < this.images.length; i++) {
-        this.slides.push({
-          image: this.images[i]
-        });
+      this.slide = this.images[0];
+      for (let i = 1; i < this.images.length; i++) {
+         if (this.images[i] == '' || this.images[i] == "borrado") {
+           console.log('');          
+         } else {
+          this.slides.push(this.images[i]);
+         }
+        
       }
+      console.log(this.article);
+      // console.log(this.images);
+      // console.log(this.article);
       // this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.article.description);  
             
      })
