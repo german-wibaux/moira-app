@@ -6,8 +6,10 @@ handlers:
 - url: /(.+)
   static_files: dist/\1
   upload: dist/(.*)
+  secure: always
 - url: /
   static_files: dist/index.html
   upload: dist/index.html
+  secure: always
 skip_files:
 - ^(?!dist)  # Skip any files not in the dist folder
