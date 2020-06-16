@@ -3,10 +3,10 @@ runtime: python27
 threadsafe: yes
 # [END runtime]
 handlers:
-- url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+- url: /(.+)
   static_files: dist/\1
-  upload: dist/(.*)(|\.map)
-- url: /(.*)
+  upload: dist/(.*)
+- url: /
   static_files: dist/index.html
   upload: dist/index.html
 skip_files:
